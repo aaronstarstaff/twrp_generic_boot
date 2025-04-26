@@ -13,11 +13,11 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from boot device
 $(call inherit-product, device/generic/boot/device.mk)
 
-PRODUCT_DEVICE := boot
+PRODUCT_DEVICE := generic
 PRODUCT_NAME := twrp_boot
-PRODUCT_BRAND := generic
-PRODUCT_MODEL := Generic Device
-PRODUCT_MANUFACTURER := generic
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Pixel 6
+PRODUCT_MANUFACTURER := google
 
 PRODUCT_GMS_CLIENTID_BASE := android-generic
 
