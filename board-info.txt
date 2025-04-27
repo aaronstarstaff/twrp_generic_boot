@@ -1,2 +1,2 @@
 require board=oriole
-require partition-exists=vendor_kernel_boot
+require partition-exists=vendor_boot
