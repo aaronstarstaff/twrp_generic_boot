@@ -73,6 +73,9 @@ BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
 TARGET_BOARD_PLATFORM := gs101
 
 # Recovery
+TWRP_EVENT_LOGGING := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TW_THEME := portrait_hdpi
