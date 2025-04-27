@@ -25,7 +25,8 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a76
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := oriole
 TARGET_NO_BOOTLOADER := true
-
+USES_DEVICE_GOOGLE_ORIOLE := true
+TARGET_BOARD_INFO_FILE := device/google/oriole/board-info.txt
 # Display
 TARGET_SCREEN_DENSITY := 480
 
