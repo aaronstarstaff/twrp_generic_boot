@@ -19,8 +19,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+$(call inherit-product-if-exists, vendor/google_devices/oriole/prebuilts/device-vendor-oriole.mk)
+$(call inherit-product-if-exists, vendor/google_devices/gs101/prebuilts/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/gs101/proprietary/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/oriole/proprietary/oriole/device-vendor-oriole.mk)
+$(call inherit-product-if-exists, vendor/google_devices/oriole/proprietary/device-vendor.mk)
+
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
+
+# Copy fstab file to ramdisk
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/recovery/root/fstab.gs101:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/system/etc/fstab.gs101
 
 # A/B OTA
 AB_OTA_UPDATER := true
@@ -77,3 +87,9 @@ PRODUCT_PACKAGES += libtrusty
 # Build libion
 PRODUCT_PACKAGES += \
     libion
+
+# Init files
+PRODUCT_COPY_FILES += \
+	device/google/oriole/recovery/root/init.recovery.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.usb.rc \
+	device/google/oriole/init.oriole.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.oriole.rc \
+        device/google/oriole/recovery/root/init.recovery.oriole.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.oriole.rc \
