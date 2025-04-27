@@ -10,16 +10,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from boot device
-$(call inherit-product, device/generic/boot/device.mk)
+# Inherit from lynx device
+$(call inherit-product, device/google/oriole/device.mk)
 
-PRODUCT_DEVICE := generic
-PRODUCT_NAME := twrp_boot
+PRODUCT_DEVICE := oriole
+PRODUCT_NAME := twrp_oriole
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel 6
 PRODUCT_MANUFACTURER := google
-
-PRODUCT_GMS_CLIENTID_BASE := android-generic
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC=""
