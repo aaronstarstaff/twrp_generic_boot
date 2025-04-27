@@ -1,6 +1,4 @@
-#
-add_lunch_combo twrp_boot-eng \
-add_lunch_combo twrp_boot-userdebug
+
 export TARGET_ARCH="arm64-v8a"
 
 # Build environment stuffs
