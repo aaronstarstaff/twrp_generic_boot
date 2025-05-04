@@ -28,10 +28,6 @@ $(call inherit-product-if-exists, vendor/google_devices/oriole/proprietary/devic
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
-# Copy fstab file to ramdisk
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/recovery/root/fstab.gs101:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/system/etc/fstab.gs101
-
 # A/B OTA
 AB_OTA_UPDATER := true
 
